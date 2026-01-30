@@ -1,2 +1,56 @@
-# html-basic
-web đầu tiên 
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trang Web Về Game</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Thế Giới Game</h1>
+        <p>Nơi giới thiệu một số thể loại game phổ biến</p>
+    </header>
+
+    <main>
+        <!-- Danh sách game -->
+        <section>
+            <h2>Các thể loại game yêu thích</h2>
+            <ul>
+                <li>Game hành động</li>
+                <li>Game nhập vai (RPG)</li>
+                <li>Game chiến thuật</li>
+            </ul>
+        </section>
+
+        <!-- Hình ảnh game -->
+        <section>
+            <h2>Hình ảnh minh họa game</h2>
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Call_of_Duty_logo_2023.svg/330px-Call_of_Duty_logo_2023.svg.png" alt="Hình game 1">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/250px-Dark_Souls_Cover_Art.jpg" alt="Hình game 2">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Limbus_Company_cover.png/250px-Limbus_Company_cover.png" alt="Hình game 3">
+        </section>
+
+        <!-- Liên kết -->
+        <section>
+            <h2>Liên kết truy cập trình duyệt</h2>
+            <p>
+                Tìm hiểu thêm về game tại:
+                <a href="https://en.wikipedia.org/wiki/Video_game" target="_blank">
+                    https://en.wikipedia.org/wiki/Video_game
+                </a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p> 2026 - Quách Chấn Hưng</p>
+    </footer>
+
+</body>
+
+</html>
