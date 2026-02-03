@@ -1,56 +1,132 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
-    <title>Trang Web Về Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Trang Web Hoàn Chỉnh</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .nav-current {
+            background-color: #1abc9c !important;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
-
-    <header>
-        <h1>Thế Giới Game</h1>
-        <p>Nơi giới thiệu một số thể loại game phổ biến</p>
-    </header>
-
-    <main>
-        <!-- Danh sách game -->
-        <section>
-            <h2>Các thể loại game yêu thích</h2>
+    <div class="container">
+        <header>
+            <h1>Dự Án CSS - Web Hoàn Chỉnh</h1>
+        </header>
+        
+        <nav>
             <ul>
-                <li>Game hành động</li>
-                <li>Game nhập vai (RPG)</li>
-                <li>Game chiến thuật</li>
+                <li><a href="#" class="nav-link" data-page="home">Trang Chủ</a></li>
+                <li><a href="#" class="nav-link" data-page="about">Giới Thiệu</a></li>
             </ul>
-        </section>
+        </nav>
+        
+        <main>
+    
+            <section id="home-page" class="page-section active">
+                <p>Đây là trang chủ của dự án. tôi đang học cách tạo kiểu cho trang web bằng CSS.</p>
+                <p>CSS (Cascading Style Sheets) là ngôn ngữ được sử dụng để mô tả giao diện và định dạng của tài liệu HTML. Với CSS, bạn có thể kiểm soát màu sắc, phông chữ, bố cục và nhiều yếu tố khác của trang web.</p>
+                <p>Dự án này bao gồm hai trang được kết hợp thành một: Trang chủ và Giới thiệu. Tất cả đều sử dụng chung một stylesheet để đảm bảo tính nhất quán trong thiết kế.</p>
+                
+                <div class="features">
+                    <h3>Tính năng của trang web:</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4>Thiết kế đáp ứng</h4>
+                            <p>Hiển thị tốt trên mọi thiết bị từ máy tính đến điện thoại</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Điều hướng mượt mà</h4>
+                            <p>Chuyển trang không cần tải lại, trải nghiệm người dùng tốt hơn</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Mã CSS chuẩn</h4>
+                            <p>Tuân thủ đầy đủ các yêu cầu từ hướng dẫn bài</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Trang Giới Thiệu -->
+            <section id="about-page" class="page-section">
+                <h2>Về Tôi</h2>
+                <p>tôi là đam mê học hỏi và chia sẻ kiến thức về CSS.</p>
+                <p>Mục tiêu của tôi là tạo ra các trang web đáp ứng đầy đủ các tiêu chuẩn web hiện đại.</p>
+                <p>ôi tin rằng thiết kế web tốt không chỉ là về mặt thẩm mỹ mà còn về khả năng tiếp cận và trải nghiệm người dùng.</p>
+                
+                
+            
+            
+    </div>
 
-        <!-- Hình ảnh game -->
-        <section>
-            <h2>Hình ảnh minh họa game</h2>
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Call_of_Duty_logo_2023.svg/330px-Call_of_Duty_logo_2023.svg.png" alt="Hình game 1">
-            <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/250px-Dark_Souls_Cover_Art.jpg" alt="Hình game 2">
-            <img
-                src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Limbus_Company_cover.png/250px-Limbus_Company_cover.png" alt="Hình game 3">
-        </section>
+    <script>
+        // JavaScript để chuyển trang không cần tải lại
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+            
+            // Xử lý click navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Ẩn tất cả sections
+                    pageSections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+        
+                    document.getElementById(`${targetPage}-page`).classList.add('active');
+                    
+                
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('nav-current');
+                    });
+                    this.classList.add('nav-current');
+                });
+            });
 
-        <!-- Liên kết -->
-        <section>
-            <h2>Liên kết truy cập trình duyệt</h2>
-            <p>
-                Tìm hiểu thêm về game tại:
-                <a href="https://en.wikipedia.org/wiki/Video_game" target="_blank">
-                    https://en.wikipedia.org/wiki/Video_game
-                </a>
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p> 2026 - Bài tập làm web </p>
-    </footer>
-
+            const messageForm = document.getElementById('messageForm');
+            if (messageForm) {
+                messageForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Lấy dữ liệu form
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Hiển thị thông báo (trong thực tế sẽ gửi đến server)
+                    alert(`Cảm ơn ${name}! Tin nhắn của bạn đã được gửi thành công.\n\nChúng tôi sẽ phản hồi đến: ${email}\n\nNội dung: ${message.substring(0, 100)}...`);
+                    
+                    // Reset form
+                    messageForm.reset();
+                });
+            }
+            
+            document.querySelector('[data-page="home"]').classList.add('nav-current');
+        });
+    </script>
 </body>
-
 </html>
