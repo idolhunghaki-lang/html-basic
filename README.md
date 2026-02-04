@@ -3,130 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Trang Web Hoàn Chỉnh</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-
-        .page-section {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-        
-        .page-section.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .nav-current {
-            background-color: #1abc9c !important;
-            font-weight: bold;
-        }
-    </style>
+    <title>Bài Tập Về Nhà 2 - Trang Web Du Lịch</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Dự Án CSS - Web Hoàn Chỉnh</h1>
-        </header>
-        
-        <nav>
-            <ul>
-                <li><a href="#" class="nav-link" data-page="home">Trang Chủ</a></li>
-                <li><a href="#" class="nav-link" data-page="about">Giới Thiệu</a></li>
-            </ul>
-        </nav>
-        
-        <main>
+    <!-- 1. Liên kết "Chuyển đến Nội dung chính" -->
+    <a href="#main-content" class="skip-link" tabindex="0">Chuyển đến Nội dung chính</a>
     
-            <section id="home-page" class="page-section active">
-                <p>Đây là trang chủ của dự án. tôi đang học cách tạo kiểu cho trang web bằng CSS.</p>
-                <p>CSS (Cascading Style Sheets) là ngôn ngữ được sử dụng để mô tả giao diện và định dạng của tài liệu HTML. Với CSS, bạn có thể kiểm soát màu sắc, phông chữ, bố cục và nhiều yếu tố khác của trang web.</p>
-                <p>Dự án này bao gồm hai trang được kết hợp thành một: Trang chủ và Giới thiệu. Tất cả đều sử dụng chung một stylesheet để đảm bảo tính nhất quán trong thiết kế.</p>
+    <header>
+        <!-- 4. Nav sử dụng inline-block với width 80% -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#parks">Công viên</a></li>
+             
                 
-                <div class="features">
-                    <h3>Tính năng của trang web:</h3>
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <h4>Thiết kế đáp ứng</h4>
-                            <p>Hiển thị tốt trên mọi thiết bị từ máy tính đến điện thoại</p>
-                        </div>
-                        <div class="feature-card">
-                            <h4>Điều hướng mượt mà</h4>
-                            <p>Chuyển trang không cần tải lại, trải nghiệm người dùng tốt hơn</p>
-                        </div>
-                        <div class="feature-card">
-                            <h4>Mã CSS chuẩn</h4>
-                            <p>Tuân thủ đầy đủ các yêu cầu từ hướng dẫn bài</p>
-                        </div>
+            </ul>
+            <!-- 5. Hình ảnh trong nav có width 10% -->
+            <img src="https://via.placeholder.com/150x60/2E86C1/FFFFFF?text=LOGO+DU+LỊCH" 
+                 alt="Logo Du lịch Việt Nam" 
+                 class="nav-logo">
+        </nav>
+    </header>
+
+    <!-- 2. Thêm id main-content -->
+    <main id="main-content">
+        <section class="hero">
+            <h1>Khám Phá Vẻ Đẹp Việt Nam</h1>
+            <p class="subtitle">Hành trình trải nghiệm những địa điểm tuyệt vời nhất</p>
+        </section>
+
+        <!-- 6. Lớp grid 2 cột ~40% -->
+        <section class="destinations" id="home">
+            <h2>Điểm Đến Nổi Bật</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/500x350/16A085/FFFFFF?text=Vịnh+Hạ+Long" 
+                         alt="Vịnh Hạ Long với hàng nghìn đảo đá">
+                    <div class="content">
+                        <h3>Vịnh Hạ Long</h3>
+                        <p>Di sản thiên nhiên thế giới với hàng nghìn đảo đá kỳ vĩ</p>
+                        <span class="price">Từ 2.500.000 VNĐ</span>
                     </div>
                 </div>
-            </section>
-            
-            <!-- Trang Giới Thiệu -->
-            <section id="about-page" class="page-section">
-                <h2>Về Tôi</h2>
-                <p>tôi là đam mê học hỏi và chia sẻ kiến thức về CSS.</p>
-                <p>Mục tiêu của tôi là tạo ra các trang web đáp ứng đầy đủ các tiêu chuẩn web hiện đại.</p>
-                <p>ôi tin rằng thiết kế web tốt không chỉ là về mặt thẩm mỹ mà còn về khả năng tiếp cận và trải nghiệm người dùng.</p>
                 
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/500x350/E74C3C/FFFFFF?text=Phố+Cổ+Hội+An" 
+                         alt="Phố cổ Hội An về đêm với đèn lồng">
+                    <div class="content">
+                        <h3>Phố Cổ Hội An</h3>
+                        <p>Thành phố di sản với kiến trúc cổ và văn hóa độc đáo</p>
+                        <span class="price">Từ 1.800.000 VNĐ</span>
+                    </div>
+                </div>
                 
-            
-            
-    </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/500x350/F39C12/FFFFFF?text=Sapa+Mù+Sương" 
+                         alt="Sapa với ruộng bậc thang và mù sương">
+                    <div class="content">
+                        <h3>Sapa</h3>
+                        <p>Thị trấn sương mù với cảnh quan núi rừng hùng vĩ</p>
+                        <span class="price">Từ 1.200.000 VNĐ</span>
+                    </div>
+                </div>
+                
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/500x350/8E44AD/FFFFFF?text=Phong+Nha+Kẻ+Bàng" 
+                         alt="Hang động Phong Nha Kẻ Bàng">
+                    <div class="content">
+                        <h3>Phong Nha Kẻ Bàng</h3>
+                        <p>Vườn quốc gia với hệ thống hang động lớn nhất thế giới</p>
+                        <span class="price">Từ 1.500.000 VNĐ</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        // JavaScript để chuyển trang không cần tải lại
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const pageSections = document.querySelectorAll('.page-section');
-            
-            // Xử lý click navigation
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetPage = this.getAttribute('data-page');
-                    
-                    // Ẩn tất cả sections
-                    pageSections.forEach(section => {
-                        section.classList.remove('active');
-                    });
-                    
-        
-                    document.getElementById(`${targetPage}-page`).classList.add('active');
-                    
+        <!-- Phần công viên để kiểm tra ảnh không bị ảnh hưởng -->
+        <section class="parks-section" id="parks">
+            <h2>Công Viên Quốc Gia</h2>
+            <div class="parks-container">
+                <div class="park-card">
+                    <img src="https://via.placeholder.com/400x300/27AE60/FFFFFF?text=Cúc+Phương" 
+                         alt="Công viên quốc gia Cúc Phương">
+                    <h3>Cúc Phương</h3>
+                    <p>Rừng mưa nhiệt đới nguyên sinh đầu tiên của Việt Nam</p>
+                    <ul>
+                        <li>Diện tích: 222 km²</li>
+                        <li>Động vật: 135 loài thú</li>
+                        <li>Thực vật: 2.234 loài</li>
+                    </ul>
+                </div>
                 
-                    navLinks.forEach(navLink => {
-                        navLink.classList.remove('nav-current');
-                    });
-                    this.classList.add('nav-current');
-                });
-            });
+                <div class="park-card">
+                    <img src="https://via.placeholder.com/400x300/3498DB/FFFFFF?text=Bạch+Mã" 
+                         alt="Công viên quốc gia Bạch Mã">
+                    <h3>Bạch Mã</h3>
+                    <p>Vườn quốc gia với hệ sinh thái đa dạng và khí hậu mát mẻ</p>
+                    <ul>
+                        <li>Diện tích: 374 km²</li>
+                        <li>Độ cao: 1.450m</li>
+                        <li>Nhiệt độ: 18-23°C</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            const messageForm = document.getElementById('messageForm');
-            if (messageForm) {
-                messageForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Lấy dữ liệu form
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const message = document.getElementById('message').value;
-                    
-                    // Hiển thị thông báo (trong thực tế sẽ gửi đến server)
-                    alert(`Cảm ơn ${name}! Tin nhắn của bạn đã được gửi thành công.\n\nChúng tôi sẽ phản hồi đến: ${email}\n\nNội dung: ${message.substring(0, 100)}...`);
-                    
-                    // Reset form
-                    messageForm.reset();
-                });
-            }
-            
-            document.querySelector('[data-page="home"]').classList.add('nav-current');
-        });
-    </script>
-</body>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Quach Chan Hung.</p>
+            <p>Website được tạo ra cho vui</p>
+        </div>
+    </footer>
+
+    <!-- Link kiểm tra trang công viên -->
+    <div style="text-align: center; margin: 20px;">
+        <a href="park.html" style="background: #e74c3c; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
+            Kiểm tra trang Công viên
 </html>
