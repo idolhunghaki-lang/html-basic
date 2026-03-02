@@ -1,122 +1,93 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài Tập Về Nhà 2 - Trang Web Du Lịch</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Responsive Homework</title>
+
+<style>
+
+/* ====== Mobile (mặc định) ====== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ====== Tablet View ====== */
+@media screen and (min-width: 772px) {
+
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .item {
+        width: 45%;
+    }
+
+    img {
+        max-height: 30vh;
+        object-fit: cover;
+    }
+}
+
+
+/* ====== Large Screen View ====== */
+@media screen and (min-width: 998px) {
+
+    .item {
+        width: 30%;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
-    <!-- 1. Liên kết "Chuyển đến Nội dung chính" -->
-    <a href="#main-content" class="skip-link" tabindex="0">Chuyển đến Nội dung chính</a>
-    
-    <header>
-        <!-- 4. Nav sử dụng inline-block với width 80% -->
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#parks">Công viên</a></li>
-             
-                
-            </ul>
-            <!-- 5. Hình ảnh trong nav có width 10% -->
-            <img src="https://via.placeholder.com/150x60/2E86C1/FFFFFF?text=LOGO+DU+LỊCH" 
-                 alt="Logo Du lịch Việt Nam" 
-                 class="nav-logo">
-        </nav>
-    </header>
 
-    <!-- 2. Thêm id main-content -->
-    <main id="main-content">
-        <section class="hero">
-            <h1>Khám Phá Vẻ Đẹp Việt Nam</h1>
-            <p class="subtitle">Hành trình trải nghiệm những địa điểm tuyệt vời nhất</p>
-        </section>
+<div class="container">
 
-        <!-- 6. Lớp grid 2 cột ~40% -->
-        <section class="destinations" id="home">
-            <h2>Điểm Đến Nổi Bật</h2>
-            <div class="grid">
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/500x350/16A085/FFFFFF?text=Vịnh+Hạ+Long" 
-                         alt="Vịnh Hạ Long với hàng nghìn đảo đá">
-                    <div class="content">
-                        <h3>Vịnh Hạ Long</h3>
-                        <p>Di sản thiên nhiên thế giới với hàng nghìn đảo đá kỳ vĩ</p>
-                        <span class="price">Từ 2.500.000 VNĐ</span>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/500x350/E74C3C/FFFFFF?text=Phố+Cổ+Hội+An" 
-                         alt="Phố cổ Hội An về đêm với đèn lồng">
-                    <div class="content">
-                        <h3>Phố Cổ Hội An</h3>
-                        <p>Thành phố di sản với kiến trúc cổ và văn hóa độc đáo</p>
-                        <span class="price">Từ 1.800.000 VNĐ</span>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/500x350/F39C12/FFFFFF?text=Sapa+Mù+Sương" 
-                         alt="Sapa với ruộng bậc thang và mù sương">
-                    <div class="content">
-                        <h3>Sapa</h3>
-                        <p>Thị trấn sương mù với cảnh quan núi rừng hùng vĩ</p>
-                        <span class="price">Từ 1.200.000 VNĐ</span>
-                    </div>
-                </div>
-                
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/500x350/8E44AD/FFFFFF?text=Phong+Nha+Kẻ+Bàng" 
-                         alt="Hang động Phong Nha Kẻ Bàng">
-                    <div class="content">
-                        <h3>Phong Nha Kẻ Bàng</h3>
-                        <p>Vườn quốc gia với hệ thống hang động lớn nhất thế giới</p>
-                        <span class="price">Từ 1.500.000 VNĐ</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="item">
+        <h2>Item 1</h2>
+        <img src="https://picsum.photos/400/300?random=1">
+        <p>Nội dung mô tả 1</p>
+    </div>
 
-        <!-- Phần công viên để kiểm tra ảnh không bị ảnh hưởng -->
-        <section class="parks-section" id="parks">
-            <h2>Công Viên Quốc Gia</h2>
-            <div class="parks-container">
-                <div class="park-card">
-                    <img src="https://via.placeholder.com/400x300/27AE60/FFFFFF?text=Cúc+Phương" 
-                         alt="Công viên quốc gia Cúc Phương">
-                    <h3>Cúc Phương</h3>
-                    <p>Rừng mưa nhiệt đới nguyên sinh đầu tiên của Việt Nam</p>
-                    <ul>
-                        <li>Diện tích: 222 km²</li>
-                        <li>Động vật: 135 loài thú</li>
-                        <li>Thực vật: 2.234 loài</li>
-                    </ul>
-                </div>
-                
-                <div class="park-card">
-                    <img src="https://via.placeholder.com/400x300/3498DB/FFFFFF?text=Bạch+Mã" 
-                         alt="Công viên quốc gia Bạch Mã">
-                    <h3>Bạch Mã</h3>
-                    <p>Vườn quốc gia với hệ sinh thái đa dạng và khí hậu mát mẻ</p>
-                    <ul>
-                        <li>Diện tích: 374 km²</li>
-                        <li>Độ cao: 1.450m</li>
-                        <li>Nhiệt độ: 18-23°C</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <div class="item">
+        <h2>Item 2</h2>
+        <img src="https://picsum.photos/400/300?random=2">
+        <p>Nội dung mô tả 2</p>
+    </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Quach Chan Hung.</p>
-            <p>Website được tạo ra cho vui</p>
-        </div>
-    </footer>
+    <div class="item">
+        <h2>Item 3</h2>
+        <img src="https://picsum.photos/400/300?random=3">
+        <p>Nội dung mô tả 3</p>
+    </div>
 
-    <!-- Link kiểm tra trang công viên -->
-    <div style="text-align: center; margin: 20px;">
-        <a href="park.html" style="background: #e74c3c; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
-            Kiểm tra trang Công viên
+</div>
+
+</body>
+</html>
