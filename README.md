@@ -9,8 +9,6 @@
 
 <style>
 
-/* MOBILE FIRST */
-
 body{
 font-family: Arial, sans-serif;
 margin:0;
