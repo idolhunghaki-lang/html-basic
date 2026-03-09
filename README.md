@@ -1,150 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Responsive Final Project</title>
+<title>Website Wireframe Design</title>
 
 <style>
 
 body{
 font-family: Arial, sans-serif;
-margin:0;
+margin:40px;
+line-height:1.6;
+background:#f4f4f4;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:10px;
+}
+
+h1{
 text-align:center;
-}
-
-header{
-padding:20px;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:1fr;
-gap:10px;
-padding:10px;
-}
-
-.item{
-border:2px solid #ccc;
-padding:10px;
 }
 
 img{
 width:100%;
-height:auto;
-}
-
-
-/* TABLET VIEW */
-
-@media (min-width:772px){
-
-.gallery{
-grid-template-columns:1fr 1fr;
-}
-
-img{
-border-radius:50%;
-}
-
-.item:last-child{
-grid-column:span 2;
-}
-
-}
-
-
-/* LARGE SCREEN */
-
-@media (min-width:992px){
-
-.item:nth-child(3n){
-grid-column:span 2;
-}
-
-img{
-border-radius:0;
-}
-
-}
-
-
-/* REDUCED MOTION */
-
-@media (prefers-reduced-motion: reduce){
-
-*{
-scroll-behavior:auto;
-animation:none;
-transition:none;
-}
-
-}
-
-
-/* DARK MODE */
-
-@media (prefers-color-scheme: dark){
-
-body{
-background:#111;
-color:#eee;
-}
-
-.item{
-background:#333;
-border-color:black;
-}
-
-img{
-background:#222;
-}
-
+border:2px solid #ccc;
+margin-top:20px;
 }
 
 </style>
-
 </head>
+
 
 <body>
 
-<header>
-<h1>My Photo Gallery</h1>
-<p>Responsive Web Design Project</p>
-</header>
+<div class="container">
 
-<main class="gallery">
+<h1>Website Wireframe Design</h1>
 
-<div class="item">
-<img src="img1.jpg" alt="Mountain landscape">
-<p>Beautiful mountain landscape.</p>
+<p>
+This project shows the wireframes that I created before building my responsive website. 
+Wireframes help visualize the structure and layout of the webpage without focusing on colors or detailed design.
+</p>
+
+<p>
+The design includes two main viewing modes: a mobile layout and a larger screen layout. 
+In the mobile view, the content is displayed in a single column so that it is easy to read on smaller screens. 
+In the larger screen layout, the page uses multiple columns to display content more efficiently and make better use of the available space.
+</p>
+
+<p>
+These wireframes demonstrate the basic placement of elements such as the header, images, and text content. 
+They serve as a blueprint for developing the final responsive webpage.
+</p>
+
+<h2>Wireframe Sketch</h2>
+
+<img src="wireframe.png" alt="Wireframe sketch showing mobile and desktop layouts">
+
 </div>
-
-<div class="item">
-<img src="img2.jpg" alt="Ocean beach">
-<p>Relaxing beach view.</p>
-</div>
-
-<div class="item">
-<img src="img3.jpg" alt="Forest trees">
-<p>Peaceful forest scenery.</p>
-</div>
-
-<div class="item">
-<img src="img4.jpg" alt="City skyline">
-<p>Modern city skyline.</p>
-</div>
-
-<div class="item">
-<img src="img5.jpg" alt="Desert dunes">
-<p>Golden desert dunes.</p>
-</div>
-
-<div class="item">
-<img src="img6.jpg" alt="Snow mountains">
-<p>Snow covered mountains.</p>
-</div>
-
-</main>
 
 </body>
+
 </html>
