@@ -1,129 +1,183 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio của tôi</title>
 
-<title>Website Wireframe Design</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial;
+    }
 
-<style>
+    body {
+      background: white;
+      color: black;
+      transition: 0.3s;
+    }
 
-body{
-font-family: Arial, sans-serif;
-margin:40px;
-background:#f5f5f5;
-line-height:1.6;
-}
+    .dark {
+      background: #111;
+      color: white;
+    }
 
-.container{
-max-width:900px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:10px;
-}
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      background: #333;
+      color: white;
+    }
 
-h1{
-text-align:center;
-}
+    ul {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+    }
 
-.section{
-margin-top:40px;
-}
+    a {
+      color: white;
+      text-decoration: none;
+    }
 
-.wireframe{
-border:2px solid black;
-padding:20px;
-margin-top:20px;
-}
+    button {
+      cursor: pointer;
+      padding: 5px 10px;
+    }
 
-.box{
-border:2px solid black;
-text-align:center;
-padding:20px;
-margin:10px 0;
-}
+    /* SECTIONS */
+    section {
+      padding: 60px;
+      text-align: center;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
+    /* PROJECT */
+    .card {
+      background: #eee;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+    }
 
-</style>
+    .dark .card {
+      background: #222;
+    }
 
+    /* FORM */
+    input, button {
+      margin: 10px;
+      padding: 10px;
+    }
+
+    /* ANIMATION */
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.6s;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      ul {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-<div class="container">
+  <!-- NAVBAR -->
+  <nav>
+    <h1>My Portfolio</h1>
+    <ul>
+      <li><a href="#home">Trang chủ</a></li>
+      <li><a href="#about">Giới thiệu</a></li>
+      <li><a href="#projects">Dự án</a></li>
+      <li><a href="#contact">Liên hệ</a></li>
+    </ul>
+    <button id="toggle">🌙</button>
+  </nav>
 
-<h1>Responsive Website Wireframe</h1>
+  <!-- HOME -->
+  <section id="home">
+    <h2>Xin chào 👋</h2>
+    <p>Tôi là sinh viên IT</p>
+  </section>
 
-<p>
-Before building my responsive website, I created wireframes to plan the layout and structure.
-Wireframes help organize content and show how the website will appear on different devices.
-This design includes two viewing modes: mobile view and large screen view.
-</p>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>Giới thiệu</h2>
+    <p>Tôi biết HTML, CSS, JavaScript</p>
+  </section>
 
-<p>
-The mobile layout uses a single column to make the content easy to read on smaller screens.
-The larger screen layout uses multiple columns to better use the available space and display
-images and text more efficiently.
-</p>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Dự án</h2>
+    <div class="card">Website 1</div>
+    <div class="card">Website 2</div>
+  </section>
 
-<div class="section">
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Liên hệ</h2>
+    <form id="form">
+      <input type="text" id="name" placeholder="Tên của bạn">
+      <input type="email" id="email" placeholder="Email">
+      <br>
+      <button type="submit">Gửi</button>
+    </form>
+    <p id="msg"></p>
+  </section>
 
-<h2>Mobile View Wireframe</h2>
+  <script>
+    // DARK MODE
+    const toggle = document.getElementById("toggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("dark");
+    };
 
-<div class="wireframe">
+    // FORM VALIDATION
+    const form = document.getElementById("form");
+    const msg = document.getElementById("msg");
 
-<div class="box">HEADER</div>
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-<div class="box">IMAGE</div>
-<div class="box">TEXT</div>
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
 
-<div class="box">IMAGE</div>
-<div class="box">TEXT</div>
+      if (name === "" || email === "") {
+        msg.textContent = "Vui lòng nhập đầy đủ!";
+        msg.style.color = "red";
+      } else {
+        msg.textContent = "Gửi thành công!";
+        msg.style.color = "green";
+      }
+    });
 
-<div class="box">IMAGE</div>
-<div class="box">TEXT</div>
+    // SCROLL ANIMATION
+    const sections = document.querySelectorAll("section");
 
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>Large Screen View Wireframe</h2>
-
-<div class="wireframe">
-
-<div class="box">HEADER</div>
-
-<div class="grid">
-<div class="box">IMAGE</div>
-<div class="box">IMAGE</div>
-</div>
-
-<div class="grid">
-<div class="box">TEXT</div>
-<div class="box">TEXT</div>
-</div>
-
-<div class="grid">
-<div class="box">IMAGE</div>
-<div class="box">IMAGE</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+          sec.classList.add("show");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
