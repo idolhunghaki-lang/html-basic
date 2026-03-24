@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio của tôi</title>
+  <title>Portfolio</title>
 
   <style>
     * {
@@ -14,32 +14,34 @@
     }
 
     body {
-      background: white;
-      color: black;
+      background: #f5f5f5;
+      color: #333;
       transition: 0.3s;
     }
 
     .dark {
-      background: #111;
-      color: white;
+      background: #121212;
+      color: #fff;
     }
 
     /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
-      padding: 15px;
-      background: #333;
+      padding: 15px 30px;
+      background: #222;
       color: white;
+      position: sticky;
+      top: 0;
     }
 
-    ul {
+    nav ul {
       display: flex;
-      gap: 15px;
+      gap: 20px;
       list-style: none;
     }
 
-    a {
+    nav a {
       color: white;
       text-decoration: none;
     }
@@ -49,33 +51,23 @@
       padding: 5px 10px;
     }
 
+    /* HERO */
+    #home {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #home h1 {
+      font-size: 40px;
+    }
+
     /* SECTIONS */
     section {
-      padding: 60px;
+      padding: 60px 20px;
       text-align: center;
-    }
-
-    /* PROJECT */
-    .card {
-      background: #eee;
-      margin: 10px;
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-    }
-
-    .dark .card {
-      background: #222;
-    }
-
-    /* FORM */
-    input, button {
-      margin: 10px;
-      padding: 10px;
-    }
-
-    /* ANIMATION */
-    section {
       opacity: 0;
       transform: translateY(30px);
       transition: 0.6s;
@@ -86,9 +78,35 @@
       transform: translateY(0);
     }
 
+    /* PROJECTS */
+    .projects {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+      width: 200px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .dark .card {
+      background: #1e1e1e;
+    }
+
+    /* FORM */
+    input, button {
+      padding: 10px;
+      margin: 10px;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 600px) {
-      ul {
+      nav ul {
         flex-direction: column;
       }
     }
@@ -97,42 +115,45 @@
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <nav>
-    <h1>My Portfolio</h1>
+    <h2>Portfolio</h2>
     <ul>
-      <li><a href="#home">Trang chủ</a></li>
-      <li><a href="#about">Giới thiệu</a></li>
-      <li><a href="#projects">Dự án</a></li>
-      <li><a href="#contact">Liên hệ</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <button id="toggle">🌙</button>
   </nav>
 
   <!-- HOME -->
-  <section id="home">
-    <h2>Xin chào 👋</h2>
-    <p>Tôi là sinh viên IT</p>
+  <section id="home" class="show">
+    <h1>Xin chào 👋</h1>
+    <p>Tôi là Web Developer</p>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
     <h2>Giới thiệu</h2>
-    <p>Tôi biết HTML, CSS, JavaScript</p>
+    <p>Tôi có kỹ năng HTML, CSS, JavaScript và xây dựng website responsive.</p>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
     <h2>Dự án</h2>
-    <div class="card">Website 1</div>
-    <div class="card">Website 2</div>
+    <div class="projects">
+      <div class="card">Website bán hàng</div>
+      <div class="card">Portfolio cá nhân</div>
+      <div class="card">Landing page</div>
+    </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <h2>Liên hệ</h2>
     <form id="form">
-      <input type="text" id="name" placeholder="Tên của bạn">
+      <input type="text" id="name" placeholder="Tên">
       <input type="email" id="email" placeholder="Email">
       <br>
       <button type="submit">Gửi</button>
@@ -142,26 +163,23 @@
 
   <script>
     // DARK MODE
-    const toggle = document.getElementById("toggle");
-    toggle.onclick = () => {
+    document.getElementById("toggle").onclick = () => {
       document.body.classList.toggle("dark");
     };
 
     // FORM VALIDATION
-    const form = document.getElementById("form");
-    const msg = document.getElementById("msg");
-
-    form.addEventListener("submit", function(e) {
+    document.getElementById("form").addEventListener("submit", function(e){
       e.preventDefault();
 
       let name = document.getElementById("name").value;
       let email = document.getElementById("email").value;
+      let msg = document.getElementById("msg");
 
-      if (name === "" || email === "") {
-        msg.textContent = "Vui lòng nhập đầy đủ!";
+      if(name === "" || email === ""){
+        msg.innerText = "Vui lòng nhập đầy đủ!";
         msg.style.color = "red";
       } else {
-        msg.textContent = "Gửi thành công!";
+        msg.innerText = "Gửi thành công!";
         msg.style.color = "green";
       }
     });
